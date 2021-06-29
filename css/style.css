@@ -1,6 +1,8 @@
 :root {
   --color-white: #fff;
-  --color-button: #c29525;
+  --color-primary: #c29525;
+  --color-grey-5: #555;
+  --color-grey-7: #777;
   --font-balooDa2: 'Baloo Da 2', serif;
   --font-josefinSlab: 'Josefin Slab', serif;
   --font-mulish: 'Mulish', sans-serif;
@@ -76,7 +78,7 @@ html {
     .header .banner__button {
       width: 25rem;
       height: 7rem;
-      background-color: var(--color-button);
+      background-color: var(--color-primary);
       border: none;
       font-family: var(--font-mulish);
       font-size: 2rem;
@@ -88,6 +90,18 @@ html {
       opacity: 0;
       animation: moveBanner 1s .9s forwards; }
 
+.sidebar {
+  width: 40rem;
+  height: 100vh;
+  background-color: var(--color-white);
+  position: fixed;
+  top: 0;
+  right: -40rem;
+  transition: right .5s; }
+
+.change .sidebar {
+  right: 0; }
+
 .hamburger {
   width: 3rem;
   height: 3rem;
@@ -98,9 +112,100 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all .7s; }
   .hamburger__line {
     width: 100%;
     height: .2rem;
     background-color: var(--color-white);
-    box-shadow: var(--menu-shadow); }
+    box-shadow: var(--menu-shadow);
+    transition: background-color .3s ease-in-out; }
+  .hamburger span {
+    position: absolute;
+    left: 5rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    font-family: var(--font-balooDa2);
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s; }
+    .hamburger span::before {
+      content: '';
+      position: absolute;
+      border-right: 1rem solid var(--color-primary);
+      border-left: 1rem solid transparent;
+      border-top: 1rem solid transparent;
+      border-bottom: 1rem solid transparent;
+      left: -2rem;
+      top: 50%;
+      transform: translateY(-50%); }
+
+.change .hamburger {
+  right: 33rem; }
+
+.change .hamburger__line {
+  background-color: rgba(0, 0, 0, 0.8); }
+  .change .hamburger__line--1 {
+    transform: rotate(45deg) translate(0.3rem, 0.8rem); }
+  .change .hamburger__line--2 {
+    opacity: 0;
+    visibility: hidden; }
+  .change .hamburger__line--3 {
+    transform: rotate(-45deg) translate(0.3rem, -0.8rem); }
+
+.change .hamburger:hover span {
+  opacity: 1;
+  visibility: visible; }
+
+.menu {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .menu__item {
+    text-align: center; }
+  .menu__link {
+    font-family: var(--font-balooDa2);
+    font-size: 4rem;
+    color: var(--color-dark-5);
+    position: relative; }
+    .menu__link::before {
+      content: attr(data-content);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--color-primary);
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: width .3s ease-in-out; }
+    .menu__link:hover::before {
+      width: 100%; }
+
+.social-media {
+  position: absolute;
+  bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .social-media i {
+    font-size: 2.2rem;
+    margin: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: var(--color-grey-7);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color .3s; }
+    .social-media i:hover {
+      background-color: var(--color-primary); }

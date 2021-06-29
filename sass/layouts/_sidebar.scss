@@ -1,0 +1,13 @@
+.sidebar {
+    width: 40rem;
+    height: 100vh;
+    background-color: var(--color-white);
+    position: fixed;
+    top: 0;
+    right: -40rem;
+    transition: right .5s;
+}
+
+.change .sidebar {
+    right: 0;
+}
