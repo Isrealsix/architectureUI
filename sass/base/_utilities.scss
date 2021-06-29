@@ -1,0 +1,20 @@
+.section-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 7rem 0 10rem 0;
+
+	&__heading {
+		font-family: var(--font-mulish);
+		font-size: 5rem;
+		font-weight: 300;
+		color: var(--color-4b);
+		margin-bottom: 6rem;
+	}
+
+	&__underline {
+		width: 12rem;
+		height: 0.3rem;
+		background-color: var(--color-primary);
+	}
+}

@@ -1,0 +1,17 @@
+.about-us {
+	width: 100%;
+	background-color: var(--color-f5);
+	padding-bottom: 15rem;
+
+	&__image-box {
+		grid-column: 7 / 11;
+		grid-row: 2 / 6;
+		width: 100%;
+
+		& img {
+			width: 100%;
+			object-fit: cover;
+			opacity: 0.8;
+		}
+	}
+}

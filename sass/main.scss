@@ -10,9 +10,12 @@
 
 @import 'layouts/header';
 @import 'layouts/sidebar';
+@import 'layouts/about-us';
+@import 'layouts/services';
 
 @import 'components/hamburger';
 @import 'components/menu';
 @import 'components/social-media';
+@import 'components/service';
 
 @import 'pages/home';
