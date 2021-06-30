@@ -4,6 +4,8 @@
 // midLaptop 1400px -> 87.5em
 // miniLaptop 1300px -> 81.25em
 // tablet 1000px     -> 62.5em
+// tab-port 700px    -> 56.25em
+// phone 500px       -> 31.25em
 
 @mixin respond($breakpoint) {
 	@if ($breakpoint == laptop) {
@@ -26,6 +28,18 @@
 
 	@if ($breakpoint == tablet) {
 		@media only screen and (max-width: 62.5em) {
+			@content;
+		}
+	}
+
+	@if ($breakpoint == tab-port) {
+		@media only screen and (max-width: 56.25em) {
+			@content;
+		}
+	}
+
+	@if ($breakpoint == phone) {
+		@media only screen and (max-width: 31.25em) {
 			@content;
 		}
 	}

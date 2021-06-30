@@ -53,6 +53,10 @@
 .change {
 	& .hamburger {
 		right: 33rem;
+
+		@include respond(phone) {
+			right: 38rem;
+		}
 	}
 
 	& .hamburger__line {

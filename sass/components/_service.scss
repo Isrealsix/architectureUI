@@ -63,6 +63,10 @@
 		margin-bottom: 6rem;
 	}
 
+	@include respond(phone) {
+		width: 30rem;
+	}
+
 	&__header {
 		display: flex;
 		align-items: center;

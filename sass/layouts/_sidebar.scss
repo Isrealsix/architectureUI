@@ -7,6 +7,11 @@
 	right: -40rem;
 	transition: right 0.5s;
 	z-index: 12;
+
+	@include respond(phone) {
+		width: 100%;
+		right: -100%;
+	}
 }
 
 .change .sidebar {
