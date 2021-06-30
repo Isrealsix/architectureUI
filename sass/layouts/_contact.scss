@@ -11,6 +11,16 @@
 		height: 75rem;
 		display: flex;
 		box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.7);
+
+		@include respond(laptop) {
+			width: 80%;
+			height: 65rem;
+		}
+
+		@include respond(miniLaptop) {
+			width: 90%;
+			height: 55rem;
+		}
 	}
 
 	&__left {
@@ -18,12 +28,20 @@
 		background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)),
 			url('../../images/contact-bg.jpg') center no-repeat;
 		background-size: cover;
+
+		@include respond(tablet) {
+			width: 0;
+		}
 	}
 
 	&__right {
 		width: 65%;
 		background-color: #eee;
 		padding: 3rem 10rem 10rem 10rem;
+
+		@include respond(tablet) {
+			width: 100%;
+		}
 
 		&-heading {
 			font-family: var(--font-balooDa2);
@@ -32,6 +50,10 @@
 			color: var(--color-27);
 			margin-bottom: 5rem;
 			text-align: center;
+
+			@include respond(miniLaptop) {
+				margin-bottom: 2rem;
+			}
 		}
 	}
 }

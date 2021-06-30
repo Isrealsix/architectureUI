@@ -5,6 +5,14 @@
 	border-radius: 0.5rem;
 	position: relative;
 
+	@include respond(laptop) {
+		width: 34rem;
+	}
+
+	@include respond(miniLaptop) {
+		margin-bottom: 8rem;
+	}
+
 	&:hover &__image-box img {
 		opacity: 0.5;
 	}

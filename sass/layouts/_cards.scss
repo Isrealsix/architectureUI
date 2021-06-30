@@ -3,4 +3,10 @@
 	justify-content: space-evenly;
 	margin-top: 8rem;
 	width: 100%;
+
+	@include respond(miniLaptop) {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 4rem;
+	}
 }

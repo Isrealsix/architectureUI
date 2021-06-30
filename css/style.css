@@ -69,7 +69,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: .5;
+    opacity: 0.5;
     animation: scale 25s; }
   .header .banner {
     position: absolute;
@@ -83,20 +83,34 @@ html {
       color: var(--color-white);
       width: 50%;
       line-height: 9rem;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       text-shadow: var(--shadow);
       opacity: 0;
-      animation: moveBanner 1s .5s forwards; }
+      animation: moveBanner 1s 0.5s forwards; }
+      @media only screen and (max-width: 87.5em) {
+        .header .banner__heading {
+          font-size: 6rem;
+          line-height: 7rem; } }
+      @media only screen and (max-width: 62.5em) {
+        .header .banner__heading {
+          font-size: 5rem;
+          line-height: 6rem; } }
     .header .banner__text {
       font-family: var(--font-josefinSlab);
       font-size: 4rem;
       color: var(--color-white);
       width: 70%;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       margin-bottom: 3rem;
       text-shadow: var(--shadow);
       opacity: 0;
-      animation: moveBanner 1s .7s forwards; }
+      animation: moveBanner 1s 0.7s forwards; }
+      @media only screen and (max-width: 87.5em) {
+        .header .banner__text {
+          font-size: 3rem; } }
+      @media only screen and (max-width: 62.5em) {
+        .header .banner__text {
+          font-size: 2.5rem; } }
     .header .banner__button {
       width: 25rem;
       height: 7rem;
@@ -110,7 +124,17 @@ html {
       text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
       box-shadow: var(--shadow);
       opacity: 0;
-      animation: moveBanner 1s .9s forwards; }
+      animation: moveBanner 1s 0.9s forwards; }
+      @media only screen and (max-width: 87.5em) {
+        .header .banner__button {
+          width: 20rem;
+          height: 5rem;
+          font-size: 1.6rem; } }
+      @media only screen and (max-width: 62.5em) {
+        .header .banner__button {
+          width: 18rem;
+          height: 4rem;
+          font-size: 1.5rem; } }
 
 .sidebar {
   width: 40rem;
@@ -133,10 +157,19 @@ html {
     grid-column: 7 / 11;
     grid-row: 2 / 6;
     width: 100%; }
+    @media only screen and (max-width: 93.75em) {
+      .about-us__image-box {
+        grid-row: 3 / -1; } }
+    @media only screen and (max-width: 62.5em) {
+      .about-us__image-box {
+        width: 40rem; } }
     .about-us__image-box img {
       width: 100%;
       object-fit: cover;
       opacity: 0.8; }
+      @media only screen and (max-width: 62.5em) {
+        .about-us__image-box img {
+          width: 100%; } }
 
 .services {
   width: 100%;
@@ -145,6 +178,11 @@ html {
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(6, 6rem);
   grid-row-gap: 4rem; }
+  @media only screen and (max-width: 62.5em) {
+    .services {
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }
 
 .team {
   display: flex;
@@ -152,12 +190,20 @@ html {
   align-items: center;
   justify-content: center;
   padding: 0 5rem 20rem 5rem; }
+  @media only screen and (max-width: 81.25em) {
+    .team {
+      padding-bottom: 5rem; } }
 
 .cards {
   display: flex;
   justify-content: space-evenly;
   margin-top: 8rem;
   width: 100%; }
+  @media only screen and (max-width: 81.25em) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 4rem; } }
 
 .contact {
   width: 100%;
@@ -171,14 +217,28 @@ html {
     height: 75rem;
     display: flex;
     box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.7); }
+    @media only screen and (max-width: 93.75em) {
+      .contact__box {
+        width: 80%;
+        height: 65rem; } }
+    @media only screen and (max-width: 81.25em) {
+      .contact__box {
+        width: 90%;
+        height: 55rem; } }
   .contact__left {
     width: 35%;
     background: linear-gradient(rgba(15, 15, 15, 0.6), rgba(22, 22, 22, 0.9)), url("../../images/contact-bg.jpg") center no-repeat;
     background-size: cover; }
+    @media only screen and (max-width: 62.5em) {
+      .contact__left {
+        width: 0; } }
   .contact__right {
     width: 65%;
     background-color: #eee;
     padding: 3rem 10rem 10rem 10rem; }
+    @media only screen and (max-width: 62.5em) {
+      .contact__right {
+        width: 100%; } }
     .contact__right-heading {
       font-family: var(--font-balooDa2);
       font-size: 6rem;
@@ -186,6 +246,9 @@ html {
       color: var(--color-27);
       margin-bottom: 5rem;
       text-align: center; }
+      @media only screen and (max-width: 81.25em) {
+        .contact__right-heading {
+          margin-bottom: 2rem; } }
 
 .hamburger {
   width: 3rem;
@@ -261,6 +324,9 @@ html {
     font-size: 4rem;
     color: var(--color-dark-5);
     position: relative; }
+    @media only screen and (max-width: 87.5em) {
+      .menu__link {
+        font-size: 3rem; } }
     .menu__link::before {
       content: attr(data-content);
       position: absolute;
@@ -270,7 +336,7 @@ html {
       width: 0;
       overflow: hidden;
       white-space: nowrap;
-      transition: width .3s ease-in-out; }
+      transition: width 0.3s ease-in-out; }
     .menu__link:hover::before {
       width: 100%; }
 
@@ -316,6 +382,23 @@ html {
   .service:nth-child(6) {
     grid-column: 11 / 14;
     grid-row: 5 / -1; }
+  @media only screen and (max-width: 87.5em) {
+    .service:nth-child(1) {
+      grid-column: 3 / 7; }
+    .service:nth-child(2) {
+      grid-column: 2 / 6; }
+    .service:nth-child(3) {
+      grid-column: 3 / 7; }
+    .service:nth-child(4) {
+      grid-column: 11 / 15; }
+    .service:nth-child(5) {
+      grid-column: 12 / 16; }
+    .service:nth-child(6) {
+      grid-column: 11 / 15; } }
+  @media only screen and (max-width: 62.5em) {
+    .service {
+      width: 40rem;
+      margin-bottom: 6rem; } }
   .service__header {
     display: flex;
     align-items: center;
@@ -341,6 +424,12 @@ html {
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
   border-radius: 0.5rem;
   position: relative; }
+  @media only screen and (max-width: 93.75em) {
+    .card {
+      width: 34rem; } }
+  @media only screen and (max-width: 81.25em) {
+    .card {
+      margin-bottom: 8rem; } }
   .card:hover .card__image-box img {
     opacity: 0.5; }
   .card__image-box {
@@ -415,11 +504,24 @@ html {
     font-size: 1.6rem;
     color: var(--color-4b);
     transition: border-bottom-style 0.3s; }
+    @media only screen and (max-width: 81.25em) {
+      .form__input {
+        margin: 2rem 0; } }
     .form__input:focus {
       border-bottom-style: solid; }
+  .form__label {
+    transition: all 0.3s; }
+  .form__input:placeholder-shown + label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem); }
   .form__input:focus ~ label {
+    opacity: 1;
+    visibility: visible;
     transform: translateY(-3rem);
     font-size: 1.2rem; }
+  .form__input:focus::placeholder {
+    color: transparent; }
   .form__group {
     position: relative; }
     .form__group input {
@@ -437,9 +539,16 @@ html {
       pointer-events: none;
       transition: all 0.3s; }
   .form__label {
-    bottom: 3rem; }
+    transform: translateY(4rem);
+    opacity: 0;
+    visibility: hidden;
+    bottom: 3rem;
+    transition: all 0.3s; }
   .form__message {
-    bottom: 6rem; }
+    bottom: 6rem;
+    transform: translateY(4rem);
+    opacity: 0;
+    visibility: hidden; }
   .form__submit {
     width: 45rem;
     height: 5rem;
@@ -467,6 +576,9 @@ html {
     width: 60%;
     display: flex;
     justify-content: space-between; }
+    @media only screen and (max-width: 93.75em) {
+      .footer__box {
+        width: 80%; } }
 
 .copyright {
   font-family: var(--font-balooDa2);

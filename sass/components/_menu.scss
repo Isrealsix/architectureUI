@@ -1,34 +1,37 @@
 .menu {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 
-    &__item {
-        text-align: center;
-    }
+	&__item {
+		text-align: center;
+	}
 
-    &__link {
-        font-family: var(--font-balooDa2);
-        font-size: 4rem;
-        color: var(--color-dark-5);
-        position: relative;
+	&__link {
+		font-family: var(--font-balooDa2);
+		font-size: 4rem;
+		color: var(--color-dark-5);
+		position: relative;
 
-        &::before {
-            content: attr(data-content);
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: var(--color-primary);
-            width: 0;
-            overflow: hidden;
-            white-space: nowrap;
-            transition: width .3s ease-in-out;
+		@include respond(midLaptop) {
+			font-size: 3rem;
+		}
 
-        }
+		&::before {
+			content: attr(data-content);
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: var(--color-primary);
+			width: 0;
+			overflow: hidden;
+			white-space: nowrap;
+			transition: width 0.3s ease-in-out;
+		}
 
-        &:hover::before {
-            width: 100%;
-        }
-    }
+		&:hover::before {
+			width: 100%;
+		}
+	}
 }

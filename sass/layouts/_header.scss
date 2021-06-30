@@ -1,70 +1,99 @@
 .header {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
 
-    &__image-box {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,.8);
-        overflow: hidden;
-    }
+	&__image-box {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		overflow: hidden;
+	}
 
-    &__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: .5;
-        animation: scale 25s;
-    }
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.5;
+		animation: scale 25s;
+	}
 
+	& .banner {
+		position: absolute;
+		top: 30%;
+		left: 15%;
+		perspective: 100rem;
 
-    & .banner {
-        position: absolute;
-        top: 30%;
-        left: 15%;
-        perspective: 100rem;
+		&__heading {
+			font-family: var(--font-balooDa2);
+			font-weight: 300;
+			font-size: 8rem;
+			color: var(--color-white);
+			width: 50%;
+			line-height: 9rem;
+			letter-spacing: 0.2rem;
+			text-shadow: var(--shadow);
+			opacity: 0;
+			animation: moveBanner 1s 0.5s forwards;
 
-        &__heading {
-            font-family: var(--font-balooDa2);
-            font-weight: 300;
-            font-size: 8rem;
-            color: var(--color-white);
-            width: 50%;
-            line-height: 9rem;
-            letter-spacing: .2rem;
-            text-shadow: var(--shadow);
-            opacity: 0;
-            animation: moveBanner 1s .5s forwards;
-        }
+			@include respond(midLaptop) {
+				font-size: 6rem;
+				line-height: 7rem;
+			}
 
-        &__text {
-            font-family: var(--font-josefinSlab);
-            font-size: 4rem;
-            color: var(--color-white);
-            width: 70%;
-            letter-spacing: .1rem;
-            margin-bottom: 3rem;
-            text-shadow: var(--shadow);
-            opacity: 0;
-            animation: moveBanner 1s .7s forwards;
-        }
+			@include respond(tablet) {
+				font-size: 5rem;
+				line-height: 6rem;
+			}
+		}
 
-        &__button {
-            width: 25rem;
-            height: 7rem;
-            background-color: var(--color-primary);
-            border: none;
-            font-family: var(--font-mulish);
-            font-size: 2rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            color: var(--color-white);
-            text-shadow: 0 .2rem .4rem rgba(0, 0, 0, .2);
-            box-shadow: var(--shadow);
-            opacity: 0;
-            animation: moveBanner 1s .9s forwards;
-        }
-    }
+		&__text {
+			font-family: var(--font-josefinSlab);
+			font-size: 4rem;
+			color: var(--color-white);
+			width: 70%;
+			letter-spacing: 0.1rem;
+			margin-bottom: 3rem;
+			text-shadow: var(--shadow);
+			opacity: 0;
+			animation: moveBanner 1s 0.7s forwards;
+
+			@include respond(midLaptop) {
+				font-size: 3rem;
+			}
+
+			@include respond(tablet) {
+				font-size: 2.5rem;
+			}
+		}
+
+		&__button {
+			width: 25rem;
+			height: 7rem;
+			background-color: var(--color-primary);
+			border: none;
+			font-family: var(--font-mulish);
+			font-size: 2rem;
+			text-transform: uppercase;
+			cursor: pointer;
+			color: var(--color-white);
+			text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+			box-shadow: var(--shadow);
+			opacity: 0;
+			animation: moveBanner 1s 0.9s forwards;
+
+			@include respond(midLaptop) {
+				width: 20rem;
+				height: 5rem;
+				font-size: 1.6rem;
+			}
+
+			@include respond(tablet) {
+				width: 18rem;
+				height: 4rem;
+				font-size: 1.5rem;
+			}
+		}
+	}
 }

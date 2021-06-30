@@ -8,10 +8,22 @@
 		grid-row: 2 / 6;
 		width: 100%;
 
+		@include respond(laptop) {
+			grid-row: 3 / -1;
+		}
+
+		@include respond(tablet) {
+			width: 40rem;
+		}
+
 		& img {
 			width: 100%;
 			object-fit: cover;
 			opacity: 0.8;
+
+			@include respond(tablet) {
+				width: 100%;
+			}
 		}
 	}
 }

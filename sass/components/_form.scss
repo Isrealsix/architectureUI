@@ -16,14 +16,33 @@
 		color: var(--color-4b);
 		transition: border-bottom-style 0.3s;
 
+		@include respond(miniLaptop) {
+			margin: 2rem 0;
+		}
+
 		&:focus {
 			border-bottom-style: solid;
 		}
 	}
+	&__label {
+		transition: all 0.3s;
+	}
+
+	&__input:placeholder-shown + label {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(4rem);
+	}
 
 	&__input:focus ~ label {
+		opacity: 1;
+		visibility: visible;
 		transform: translateY(-3rem);
 		font-size: 1.2rem;
+	}
+
+	&__input:focus::placeholder {
+		color: transparent;
 	}
 
 	&__group {
@@ -51,11 +70,18 @@
 	}
 
 	&__label {
+		transform: translateY(4rem);
+		opacity: 0;
+		visibility: hidden;
 		bottom: 3rem;
+		transition: all 0.3s;
 	}
 
 	&__message {
 		bottom: 6rem;
+		transform: translateY(4rem);
+		opacity: 0;
+		visibility: hidden;
 	}
 
 	&__submit {
